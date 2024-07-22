@@ -30,6 +30,7 @@ function handelClick(imgElem, imgIndex) {
       if (firstImg.src == secondImg.src) {
         score++;
         if(score==6){
+            restartBtn.hidden = true
             winnnerAudio.play();
             return;
         }

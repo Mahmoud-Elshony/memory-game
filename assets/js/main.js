@@ -54,6 +54,10 @@ function startGame() {
         imgElem.onclick = () => handelClick(imgElem, imgIndex);
     });
 }
+restartBtn.onclick = function(){
+  this.hidden = true;
+  startGame();
+}
 window.onload = function (){
   startGame();
 }

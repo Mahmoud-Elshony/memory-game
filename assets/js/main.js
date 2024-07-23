@@ -22,43 +22,42 @@ function handelClick(imgElem, imgIndex) {
     flibCardAudio.play();
     imgElem.classList = "flibr";
     flibedImg.push(imgElem);
-    imgElem.src ="./assets/image/"+ imgSrcArr[imgIndex] + ".gif";
+    imgElem.src = "./assets/image/" + imgSrcArr[imgIndex] + ".gif";
   }
   if (flibedImg.length == 2) {
     setTimeout(() => {
       let [firstImg, secondImg] = flibedImg;
       if (firstImg.src == secondImg.src) {
+        flibedImg.length = 0;
         score++;
-        if(score==6){
-            restartBtn.hidden = false;
-            winnnerAudio.play();
-            return;
+        if (score == 6) {
+          restartBtn.hidden = false;
+          winnnerAudio.play();
+          return;
         }
         matchTwoCard.play();
-        flibedImg.length = 0;
       } else {
         firstImg.src = "./assets/image/Moon.gif";
         secondImg.src = "./assets/image/Moon.gif";
         firstImg.classList.remove("flibr");
         secondImg.classList.remove("flibr");
-        console.log(flibedImg);
         flibedImg.length = 0;
       }
     }, 500);
   }
-  console.log(document.images);
 }
 function startGame() {
-    imgSrcArr = shufllImage(makeCardsArray(6));
-    [...document.images].forEach((imgElem, imgIndex) => {
-        imgElem.src = "./assets/image/Moon.gif";
-        imgElem.onclick = () => handelClick(imgElem, imgIndex);
-    });
+  imgSrcArr = shufllImage(makeCardsArray(6));
+  [...document.images].forEach((imgElem, imgIndex) => {
+    imgElem.src = "./assets/image/Moon.gif";
+    imgElem.onclick = () => handelClick(imgElem, imgIndex);
+  });
 }
-restartBtn.onclick = function(){
+restartBtn.onclick = function () {
+  [...document.images].forEach(e => e.classList.remove("flibr"));
   this.hidden = true;
   startGame();
-}
-window.onload = function (){
+};
+window.onload = function () {
   startGame();
-}
+};

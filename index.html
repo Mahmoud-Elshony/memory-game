@@ -4,29 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Game</title>
+    <style>
+      .imgs-container {
+        margin: 0 auto;
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+      .imgs-container div {
+        flex: 1 1 calc(25% - 16px);
+        max-width: calc(25% - 16px);
+      }
+      .imgs-container img {
+        width: 100%;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .imgs-container div {
+          flex: 1 1 calc(33.33% - 16px);
+          max-width: calc(33.33% - 16px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .imgs-container{
+          width: 80%;
+        }
+        .imgs-container div {
+          flex: 1 1 calc(50% - 16px);
+          max-width: calc(50% - 16px);
+        }
+      }
+
+      .btn-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      #restartBtn {
+        background-color: #0905;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <center>
-      <img src="./assets/image/4.gif" alt="" />
-      <img src="./assets/image/5.gif" alt="" />
-      <img src="./assets/image/1.gif" alt="" />
-      <img src="./assets/image/3.gif" alt="" />
-      <br />
-      <img src="./assets/image/5.gif" alt="" />
-      <img src="./assets/image/2.gif" alt="" />
-      <img src="./assets/image/1.gif" alt="" />
-      <img src="./assets/image/2.gif" alt="" />
-      <br />
-      <img src="./assets/image/4.gif" alt="" />
-      <img src="./assets/image/6.gif" alt="" />
-      <img src="./assets/image/6.gif" alt="" />
-      <img src="./assets/image/3.gif" alt="" />
-      <br />
-      <br />
-      <br />
-      <button id="restartBtn" style="background-color: #0905;padding: 10px;" hidden >Restart Game🌺</button>
+    <div class="imgs-container">
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+      <div><img src="./assets/image/2.gif" alt=""></div>
+    </div>
+    <div class="btn-container">
+      <button id="restartBtn">
+        Restart Game🌺
+      </button>
+    </div>
 
-    </center>
-   <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
